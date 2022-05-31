@@ -3,12 +3,10 @@ package com.bridgelabz.GreetingApp.Model;
 import lombok.Getter;
 import lombok.Setter;
 
+@Getter
+@Setter
 public class User {
-
-    @Getter
-    @Setter
     private String firstName;
-
     private String lastName;
 
     @Override
@@ -17,4 +15,5 @@ public class User {
         str += (lastName != null) ? lastName : "";
         return str.trim();
     }
+
 }

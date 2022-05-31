@@ -1,20 +1,33 @@
 package com.bridgelabz.GreetingApp.Model;
 
-public class Greeting {
-    private final long id;
-    private final String content;
+import lombok.Getter;
+import lombok.Setter;
 
-    public Greeting(long id, String content) {
-        this.id = id;
-        this.content = content;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+    @Entity
+    @Getter
+    @Setter
+    @Table(name = "GREETING")
+    public class Greeting {
+        @Id
+        @Column(name = "id", nullable = false)
+        private long id;
+
+        private String message;
+
+        public Greeting(long id, String message) {
+            this.id = id;
+            this.message = message;
+        }
+
+        public Greeting() {
+            id = 0;
+            message = "";
+        }
+
     }
-
-    public long getId() {
-        return id;
-    }
-
-    public String getContent() {
-        return content;
-    }
-}
-
